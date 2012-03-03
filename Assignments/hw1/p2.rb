@@ -3,8 +3,8 @@ class NoSuchStrategyError < StandardError ; end
 
 def rps_game_winner(game)
 	raise WrongNumberOfPlayersError unless game.length == 2
-	raise NoSuchStrategyError if ["R", "S", "P"].index(game[0][1]) == nil
-	raise NoSuchStrategyError if ["R", "S", "P"].index(game[1][1]) == nil
+	raise NoSuchStrategyError if ["R", "S", "P"].index(game[0][1].upcase) == nil
+	raise NoSuchStrategyError if ["R", "S", "P"].index(game[1][1].upcase) == nil
 	
 	wc = Hash.new(0);
 	wc[["R","P"]] = 1;
